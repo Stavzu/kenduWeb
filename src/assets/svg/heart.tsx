@@ -1,0 +1,14 @@
+import React from "react";
+import { Icon } from "@chakra-ui/react";
+import { ISvg } from "./types";
+
+export const Heart = ({ height, width }: ISvg) => (
+    <Icon viewBox="0 0 64 64" height={height} width={width}>
+        <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M23.6846 5.36816H12.6846V10.3682H23.6846V5.36816ZM50.6846 6H39.6846V11H35V16H40V11H50.6846V6ZM7.68457 11H12.6846V16H7.68457V11ZM7.68457 17H2.68457V33H7.68457V17ZM8 33H13V38H8V33ZM13 38H18V43H13V38ZM18 44H23V49H18V44ZM29 49H24V54H29V59H34V54H29V49ZM40 49H35V54H40V49ZM40 49H45V44H40V49ZM50 38H45V43H50V38ZM51 33H56V38H51V33ZM56 33V17H61V33H56ZM24 11H29V16H24V11ZM34 17H29V22H34V17ZM56 11H51V16H56V11Z"
+            fill="#D5431A"
+        />
+    </Icon>
+);
