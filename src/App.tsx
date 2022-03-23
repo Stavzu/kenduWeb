@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
+import { Box } from '@chakra-ui/react';
 
 function App() {
-    return <div>Kendu web</div>;
+	return <Box bg="brand.orange">Kendu webdf dffd, adkfn</Box>;
 }
 
 export default App;
