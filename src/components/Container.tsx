@@ -1,3 +1,4 @@
+import { Box, Container } from "@chakra-ui/react";
 import React, { FC } from "react";
 import Footer from "./Navigation/Footer";
 import Header from "./Navigation/Header";
@@ -6,14 +7,14 @@ interface IContainer {
     readonly children: React.ReactNode;
 }
 
-const Container: FC<IContainer> = ({ children }) => {
+const ContainerBox: FC<IContainer> = ({ children }) => {
     return (
         <>
             <Header />
-            {children}
+            <Box>{children}</Box>
             <Footer />
         </>
     );
 };
 
-export default Container;
+export default ContainerBox;

@@ -4,7 +4,12 @@ import { socialIconsData } from "../data";
 
 function SocialIcons() {
     return (
-        <HStack spacing="24px" ml="80px">
+        <HStack
+            spacing="24px"
+            ml={{ lg: "80px" }}
+            display={{ base: "none", lg: "flex" }}
+            justifyContent="center"
+        >
             {socialIconsData.map((socialIcon) => {
                 return (
                     <Link

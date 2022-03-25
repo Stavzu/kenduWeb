@@ -1,23 +1,22 @@
-import React from "react";
-import { Box, HStack } from "@chakra-ui/react";
+import React, { FC } from "react";
+import { Box } from "@chakra-ui/react";
 import { navigationData } from "../data";
 import HeaderItem from "./HeaderItem";
 
-export const HeaderItems = () => {
+export const HeaderItems: FC<{ isOpenNav: boolean }> = ({ isOpenNav }) => {
     return (
-        <Box display="flex">
-            <HStack spacing="48px">
-                {navigationData.map((navigation) => {
-                    const isSubItems = Array.isArray(navigation.subItems);
-                    return (
-                        <HeaderItem
-                            isSubItems={isSubItems}
-                            navigation={navigation}
-                            key={navigation.id}
-                        />
-                    );
-                })}
-            </HStack>
+        <Box textAlign="center" w="100%" display={{ base: "grid", md: "flex" }}>
+            {navigationData.map((navigation) => {
+                const isSubItems = Array.isArray(navigation.subItems);
+                return (
+                    <HeaderItem
+                        isSubItems={isSubItems}
+                        navigation={navigation}
+                        key={navigation.id}
+                        isOpenNav={isOpenNav}
+                    />
+                );
+            })}
         </Box>
     );
 };
