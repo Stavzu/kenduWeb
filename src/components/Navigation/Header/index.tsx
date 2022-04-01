@@ -15,13 +15,13 @@ function Header() {
         <Box
             w="100%"
             zIndex="10"
-            position="relative"
+            position="fixed"
             display={{ base: "grid", lg: "flex" }}
             justifyContent={{ lg: "space-between" }}
             height={{ base: isOpenNav ? "100vh" : "64px", lg: "85px" }}
             bg={{
                 base: isOpenNav ? "#D7D7D7" : "transparent",
-                lg: "none",
+                lg: "white",
             }}
         >
             <Box
