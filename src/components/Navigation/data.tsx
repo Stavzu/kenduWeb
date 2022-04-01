@@ -20,15 +20,27 @@ export const navigationData = [
     { id: 5, text: "Kontakt", link: "/kontakt" },
 ];
 
-export const socialIconsData = [
-    { id: 1, icon: <Facebook />, link: "o-nas" },
+export const getSocialIconsData = ({ width, height, color }: any) => [
+    {
+        id: 1,
+        icon: <Facebook width={width} height={height} color={color} />,
+        link: "https://www.facebook.com/ReactGirlsPrague",
+    },
     {
         id: 2,
-        icon: <Twitter />,
-        link: "co-delame",
+        icon: <Twitter width={width} height={height} color={color} />,
+        link: "https://twitter.com/ReactGirlsPraha",
     },
-    { id: 3, icon: <Instagram />, link: "pribehy" },
-    { id: 4, icon: <Youtube />, link: "pribehy" },
+    {
+        id: 3,
+        icon: <Instagram width={width} height={height} color={color} />,
+        link: "https://www.instagram.com/accounts/login/?next=/reactgirlsprague/",
+    },
+    {
+        id: 4,
+        icon: <Youtube width={width} height={height} color={color} />,
+        link: "https://twitter.com/ReactGirlsPraha",
+    },
 ];
 
 export const footerNavigationData = [
@@ -67,28 +79,28 @@ export const footerNavigationData = [
     {
         id: 10,
         text: "Medium",
-        link: "/o-nas",
+        link: "https://reactgirls.medium.com/",
         mobile: false,
         section: "social",
     },
     {
         id: 11,
         text: "Facebook",
-        link: "/o-nas",
+        link: "https://www.facebook.com/ReactGirlsPrague",
         mobile: false,
         section: "social",
     },
     {
         id: 12,
         text: "Instagram",
-        link: "/o-nas",
+        link: "https://www.instagram.com/accounts/login/?next=/reactgirlsprague/",
         mobile: true,
         section: "social",
     },
     {
         id: 13,
         text: "Twitter",
-        link: "/o-nas",
+        link: "https://twitter.com/ReactGirlsPraha",
         mobile: false,
         section: "social",
     },

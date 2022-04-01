@@ -18,5 +18,5 @@ export const getNestedLinkColor = ({
     if (locationPath === navigation.link) {
         return "brand.orange.1";
     }
-    return "text.2";
+    return "brand.text.2";
 };

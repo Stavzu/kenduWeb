@@ -1,19 +1,28 @@
 import { HStack, Box, Link } from "@chakra-ui/react";
-import React from "react";
-import { socialIconsData } from "../data";
+import React, { FC } from "react";
+import { getSocialIconsData } from "../data";
 
-function SocialIcons() {
+const SocialIcons: FC<{ type?: string }> = ({ type }) => {
+    const isFooter = type === "footer";
+    const isFooterSocialSize = isFooter ? "20px" : "16px";
+    const footerSocialColor = isFooter ? "brand.grey.10" : "#999999";
+    const socialData = getSocialIconsData({
+        width: isFooterSocialSize,
+        height: isFooterSocialSize,
+        color: footerSocialColor,
+    });
     return (
         <HStack
             spacing="24px"
             ml={{ lg: "80px" }}
-            display={{ base: "none", lg: "flex" }}
+            display={{ base: isFooter ? "flex" : "none", lg: "flex" }}
             justifyContent="center"
         >
-            {socialIconsData.map((socialIcon) => {
+            {socialData.map((socialIcon) => {
                 return (
                     <Link
-                        href="https://chakra-ui.com"
+                        key={socialIcon.id}
+                        href={socialIcon.link}
                         isExternal
                         _focus={{
                             boxShadow: "none",
@@ -25,6 +34,6 @@ function SocialIcons() {
             })}
         </HStack>
     );
-}
+};
 
 export default SocialIcons;

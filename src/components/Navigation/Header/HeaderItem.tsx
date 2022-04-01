@@ -55,7 +55,7 @@ const HeaderItem: FC<IHeaderItem> = ({ isSubItems, navigation, isOpenNav }) => {
                     <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
                         {navigation.subItems?.map((subItem) => {
                             return (
-                                <SubItem subItem={subItem}>
+                                <SubItem subItem={subItem} key={subItem.id}>
                                     <MenuItem>{subItem.text}</MenuItem>
                                 </SubItem>
                             );

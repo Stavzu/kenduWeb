@@ -1,6 +1,7 @@
-import { Box, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import { footerNavigationData } from "../data";
+import LinkListItems from "./LinkListItems";
 
 function MobileLinks() {
     const pagesLinks = footerNavigationData.filter((i) => i.section === "page");
@@ -8,33 +9,9 @@ function MobileLinks() {
         (i) => i.section === "contact" || i.section === "personal"
     );
     return (
-        <Box display="flex">
-            <UnorderedList listStyleType={"none"}>
-                {pagesLinks.map((link) => {
-                    return (
-                        <ListItem
-                            fontSize="14px"
-                            lineHeight="21px"
-                            fontWeight="400"
-                        >
-                            {link.text}
-                        </ListItem>
-                    );
-                })}
-            </UnorderedList>
-            <UnorderedList listStyleType={"none"}>
-                {contactLinks.map((link) => {
-                    return (
-                        <ListItem
-                            fontSize="14px"
-                            lineHeight="21px"
-                            fontWeight="400"
-                        >
-                            {link.text}
-                        </ListItem>
-                    );
-                })}
-            </UnorderedList>
+        <Box display="grid" gridTemplateColumns="1fr 1fr" mb="32px">
+            <LinkListItems data={pagesLinks} />
+            <LinkListItems data={contactLinks} />
         </Box>
     );
 }

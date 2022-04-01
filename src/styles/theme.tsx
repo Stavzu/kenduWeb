@@ -9,6 +9,8 @@ const colors = {
         silver: "#D4D4D4",
         gradient: "linear-gradient(180deg, #FFB81E 0%, #EC7357 100.05%)",
         grey: {
+            10: "#0D0D0D",
+            30: "#333333",
             300: "#999999",
             500: "#E5E5E5",
             700: "#F5F5F5",
@@ -19,6 +21,7 @@ const colors = {
         },
         text: {
             2: "#41454E",
+            3: "#6E757C",
         },
     },
 };
