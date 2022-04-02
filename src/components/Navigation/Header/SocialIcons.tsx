@@ -4,7 +4,7 @@ import { getSocialIconsData } from "../data";
 
 const SocialIcons: FC<{ type?: string }> = ({ type }) => {
     const isFooter = type === "footer";
-    const isFooterSocialSize = isFooter ? "20px" : "16px";
+    const isFooterSocialSize = isFooter ? "2rem" : "1.6rem";
     const footerSocialColor = isFooter ? "brand.grey.10" : "#999999";
     const socialData = getSocialIconsData({
         width: isFooterSocialSize,
@@ -13,8 +13,8 @@ const SocialIcons: FC<{ type?: string }> = ({ type }) => {
     });
     return (
         <HStack
-            spacing="24px"
-            ml={{ lg: "80px" }}
+            spacing="2.4rem"
+            ml={{ lg: "8rem" }}
             display={{ base: isFooter ? "flex" : "none", lg: "flex" }}
             justifyContent="center"
         >

@@ -5,7 +5,7 @@ export interface ISubItem {
 }
 export interface INavigationData {
     readonly id: number;
-    readonly link: string;
+    readonly link?: string;
     readonly text: string;
     readonly subItems?: ISubItem[];
 }
@@ -19,4 +19,23 @@ export interface IHeaderItem {
 export interface IMenuToggle {
     readonly toggle: () => void;
     readonly isOpen: boolean;
+}
+
+export interface ISubItems {
+    readonly onOpen: () => void;
+    readonly navigation: INavigationData;
+    readonly onClose: () => void;
+    readonly hasActiveUrl: boolean;
+}
+
+export interface IMenuItem {
+    readonly children: React.ReactNode;
+    readonly navigation: INavigationData;
+    readonly activeUrl: string;
+}
+
+export interface IFooterNavigationData {
+    readonly id: number;
+    readonly text: string;
+    readonly link: string;
 }

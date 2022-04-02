@@ -1,51 +1,27 @@
-import React from "react";
+import React, { FC } from "react";
 import { Box, Grid, Text, Container } from "@chakra-ui/react";
 import LogoGridItem from "./LogoGridItem";
 import LinksGridItem from "./LinksGridItem";
 import NewsletterGridItem from "./NewsletterGridItem";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import SocialPart from "./FooterSocialPart";
+import {
+    CompanyNameStyle,
+    FooterContainerStyle,
+    FooterGridStyle,
+} from "./style";
 
-const Footer = () => {
+const Footer: FC = () => {
     const isMobile = useMediaQuery("(max-width: 48em)");
     return (
-        <Box
-            my={{
-                base: "40px",
-                md: "100px",
-                xl: "224px",
-            }}
-        >
+        <Box {...FooterContainerStyle}>
             <Container maxW="container.xl">
-                <Grid
-                    templateRows={{
-                        base: "auto auto auto",
-                        md: "repeat(2, 1fr)",
-                        xl: "1fr",
-                    }}
-                    templateColumns={{
-                        base: "1fr",
-                        lg: "repeat(5, 1fr)",
-                    }}
-                >
+                <Grid {...FooterGridStyle}>
                     <LogoGridItem />
                     <LinksGridItem />
                     <NewsletterGridItem />
                 </Grid>
-                <Text
-                    fontSize="xs"
-                    color="brand.text.3"
-                    mt={{
-                        md: "20px",
-                        lg: "46px",
-                    }}
-                    display={{
-                        base: "none",
-                        md: "flex",
-                    }}
-                >
-                    © Kendu 2022
-                </Text>
+                <Text {...CompanyNameStyle}>© Kendu 2022</Text>
                 {isMobile && <SocialPart />}
             </Container>
         </Box>

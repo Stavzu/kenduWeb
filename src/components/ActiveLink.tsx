@@ -1,26 +1,25 @@
 import React from "react";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import { Link as ChakraLink } from "@chakra-ui/react";
+import Link from "next/link";
 
 export const ActiveLink = ({
     children,
-    to,
+    activeLink,
+    shallow,
+    href,
 }: {
     children: React.ReactNode;
-    to: string;
+    activeLink: boolean;
+    shallow?: boolean;
+    href: string;
 }) => {
-    const resolved = useResolvedPath(to);
-    const match = useMatch({ path: resolved.pathname, end: true });
     return (
-        <div>
-            <ChakraLink
-                as={Link}
-                style={{ textDecoration: "none" }}
-                color={match ? "brand.orange.1" : ""}
-                to={to}
-            >
-                {children}
-            </ChakraLink>
-        </div>
+        <Link
+            color={activeLink ? "brand.orange.1" : ""}
+            as={href}
+            shallow={shallow}
+            href={href}
+        >
+            {children}
+        </Link>
     );
 };

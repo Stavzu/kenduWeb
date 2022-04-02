@@ -1,22 +1,17 @@
 import { GridItem, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { FC } from "react";
 import FormikExample from "../../Newsletter/NewsletterInput";
+import { NewsletterGridStyle } from "./style";
 
-const NewsletterGridItem = () => {
+const NewsletterGridItem: FC = () => {
     return (
-        <GridItem
-            rowSpan={{ base: 1, md: 2, lg: 2 }}
-            colSpan={{
-                base: 1,
-                md: 5,
-                lg: 2,
-            }}
-            mt={{
-                md: "30px",
-                xl: "0",
-            }}
-        >
-            <Text fontSize="24px" lineHeight="30px" fontWeight="800" mb="20px">
+        <GridItem {...NewsletterGridStyle}>
+            <Text
+                fontSize="2.4rem"
+                lineHeight="3rem"
+                fontWeight="800"
+                mb="2rem"
+            >
                 Sleduj co je nového
             </Text>
             <FormikExample />
@@ -25,7 +20,7 @@ const NewsletterGridItem = () => {
                 color="brand.grey.3"
                 fontWeight="400"
                 lineHeight="160%"
-                mt="16px"
+                mt="1.6rem"
             >
                 Notifikace o akademií nebo mentoringu. Meetupy. Příběhy
                 absolventů. Max jeden mail měsíčně.

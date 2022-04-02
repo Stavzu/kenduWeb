@@ -1,66 +1,59 @@
 import React, { FC } from "react";
-import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    useDisclosure,
-    Link,
-    Box,
-} from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
-import SubItem from "./SubItem";
+import { Menu, MenuButton, useDisclosure, Box } from "@chakra-ui/react";
+
 import { IHeaderItem } from "../types";
 import { getNestedLinkColor } from "./getNestedLinkColor";
+import { useRouter } from "next/router";
+import { SubItems } from "./SubItems";
+import { MenuItem } from "./MenuItem";
+
+export const subItemsLink = ["/mentoring", "/akademie", "/meetupy"];
 
 const HeaderItem: FC<IHeaderItem> = ({ isSubItems, navigation, isOpenNav }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const router = useRouter();
 
-    const location = useLocation();
-    const locationPath = location.pathname;
-    const linkColor = getNestedLinkColor({ locationPath, navigation });
+    const activeUrl = router.pathname;
+    const linkColor = getNestedLinkColor({
+        activeUrl,
+        navigation,
+    });
+
+    const hasActiveUrl = subItemsLink.includes(activeUrl);
 
     return (
         <Box
             bg={isOpenNav ? "brand.white" : "transparent"}
             textAlign="left"
-            mr={{ md: "48px" }}
+            mr={{ md: "4.8rem" }}
             _last={{
-                mr: "0px",
+                mr: "0",
             }}
         >
             <Menu isOpen={isOpen}>
-                <Link
-                    href={navigation.link}
-                    _hover={{
-                        textDecoration: "none",
-                    }}
-                >
+                <MenuItem navigation={navigation} activeUrl={activeUrl}>
                     <MenuButton
                         aria-label="Options"
                         onMouseEnter={onOpen}
                         onMouseLeave={onClose}
                         color={linkColor}
-                        fontSize={{ base: "32px", md: "16px" }}
-                        p={{ base: "24px", md: "0px" }}
+                        fontSize={{ base: "3.2rem", md: "1.6rem" }}
+                        p={{ base: "2.4rem", md: "0" }}
                         _hover={{
                             color: "brand.orange.1",
                         }}
                     >
                         {navigation.text}
                     </MenuButton>
-                </Link>
+                </MenuItem>
 
                 {isSubItems && (
-                    <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-                        {navigation.subItems?.map((subItem) => {
-                            return (
-                                <SubItem subItem={subItem} key={subItem.id}>
-                                    <MenuItem>{subItem.text}</MenuItem>
-                                </SubItem>
-                            );
-                        })}
-                    </MenuList>
+                    <SubItems
+                        onOpen={onOpen}
+                        navigation={navigation}
+                        onClose={onClose}
+                        hasActiveUrl={hasActiveUrl}
+                    />
                 )}
             </Menu>
         </Box>

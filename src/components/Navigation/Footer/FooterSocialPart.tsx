@@ -1,14 +1,13 @@
-import { Divider, Image, Box } from "@chakra-ui/react";
-import React from "react";
+import { Divider, Box, Image } from "@chakra-ui/react";
+import React, { FC } from "react";
 import SocialIcons from "../Header/SocialIcons";
-import slack from "../../../assets/images/social/slack-color.png";
 
-const FooterSocialPart = () => {
+const FooterSocialPart: FC = () => {
     return (
         <>
-            <Divider mt="30px" />
-            <Box display="flex" justifyContent="space-between" mt="30px">
-                <Image src={slack} />
+            <Divider mt="3rem" />
+            <Box display="flex" justifyContent="space-between" mt="3rem">
+                <Image src="/images/social/slack-color.png" />
                 <SocialIcons type="footer" />
             </Box>
         </>

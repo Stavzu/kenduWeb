@@ -1,17 +1,17 @@
-import { Box } from "@chakra-ui/react";
+import { NextPage } from "next";
 import React from "react";
-import FollowUs from "../components/About/FollowUsPart";
-import OurPartners from "../components/About/OurPartnersPart";
-import ProductsList from "../components/About/WhatWeDoPart/ProductsList";
+import AboutPart from "../components/About/AboutPart";
+import NumberPart from "../components/About/NumbersPart";
+import PeoplePart from "../components/About/PeoplePart";
+import WantMoreContainer from "../components/WantMore/WantMoreContainer";
 
-export function About() {
+export const About: NextPage = () => {
     return (
-        <div>
-            About
-            <ProductsList />
-            <OurPartners />
-            <Box height="400px">a</Box>
-            <FollowUs />
-        </div>
+        <>
+            <AboutPart />
+            <NumberPart />
+            <PeoplePart />
+            <WantMoreContainer type="slack" title="Chceš být součástí Kendu?" />
+        </>
     );
-}
+};

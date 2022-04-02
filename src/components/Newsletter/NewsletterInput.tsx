@@ -1,8 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import { useFormik } from "formik";
 import { Box, Button, Input } from "@chakra-ui/react";
+import { buttonStyle, inputStyle, inputContainerStyle } from "./styles";
 
-function NewsletterInput() {
+// TODO create custom validation
+
+const NewsletterInput: FC = () => {
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -14,20 +17,7 @@ function NewsletterInput() {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Box
-                display={{
-                    base: "grid",
-                    md: "flex",
-                }}
-                border={{
-                    md: "1px solid",
-                }}
-                borderRadius="8px"
-                borderColor="brand.grey.30"
-                minW={{
-                    md: "420px",
-                }}
-            >
+            <Box {...inputContainerStyle}>
                 <Input
                     id="email"
                     name="email"
@@ -35,49 +25,15 @@ function NewsletterInput() {
                     onChange={formik.handleChange}
                     value={formik.values.email}
                     placeholder="Váš email"
-                    height="56px"
-                    color="brand.text.3"
-                    fontSize="sm"
-                    borderRadius="8px"
-                    borderColor="brand.grey.30"
-                    fontWeight="400"
-                    border={{
-                        base: "1px solid",
-                        md: "none",
-                    }}
-                    _focus={{
-                        border: ["1px solid", "1px solid", "none"],
-                    }}
+                    {...inputStyle}
                 />
 
-                <Button
-                    type="submit"
-                    fontSize="sm"
-                    mt="2"
-                    mr={{
-                        md: "2",
-                    }}
-                    w={{
-                        base: "auto",
-                        md: "fit-content",
-                    }}
-                    px="40px"
-                    bg="brand.grey.10"
-                    color="brand.white"
-                    fontWeight="400"
-                    _hover={{
-                        color: "brand.grey.10",
-                        bg: "transparent",
-                        borderColor: "brand.grey.30",
-                        border: "1px solid",
-                        cursor: "pointer",
-                    }}
-                >
+                <Button type="submit" {...buttonStyle}>
                     Chci o všem vědět
                 </Button>
             </Box>
         </form>
     );
-}
+};
 
 export default NewsletterInput;

@@ -1,19 +1,35 @@
 import { Box } from "@chakra-ui/react";
-import React from "react";
+import React, { FC } from "react";
+import { LinkType } from "../../constants";
 import { footerNavigationData } from "../data";
 import LinkListItems from "./LinkListItems";
+import { FooterLinkType } from "./type";
 
-function MobileLinks() {
-    const pagesLinks = footerNavigationData.filter((i) => i.section === "page");
-    const contactLinks = footerNavigationData.filter(
-        (i) => i.section === "contact" || i.section === "personal"
+const getMobileLinks = ({
+    link,
+    secondLink,
+}: {
+    link: LinkType;
+    secondLink?: LinkType;
+}): FooterLinkType[] =>
+    footerNavigationData.filter((footerData) =>
+        secondLink
+            ? footerData.section === link
+            : footerData.section === link || footerData.section === secondLink
     );
+
+const MobileLinks: FC = () => {
     return (
-        <Box display="grid" gridTemplateColumns="1fr 1fr" mb="32px">
-            <LinkListItems data={pagesLinks} />
-            <LinkListItems data={contactLinks} />
+        <Box display="grid" gridTemplateColumns="1fr 1fr" mb="3.2rem">
+            <LinkListItems data={getMobileLinks({ link: LinkType.PAGE })} />
+            <LinkListItems
+                data={getMobileLinks({
+                    link: LinkType.CONTACT,
+                    secondLink: LinkType.PERSONAL,
+                })}
+            />
         </Box>
     );
-}
+};
 
 export default MobileLinks;

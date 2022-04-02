@@ -1,20 +1,48 @@
 @font-face {
     font-family: "Lineca-Bold";
-    src: url("fonts/F37Lineca-Bold.otf");
-    src: url("fonts/F37Lineca-Bold.otf") format("otf"),
-        url("fonts/F37Lineca-Bold.ttf") format("ttf"),
-        url("fonts/F37Lineca-Bold.woff2") format("woff2");
+    src: url(".././public/fonts/F37Lineca-Bold.otf");
+    src: url(".././public/fonts/F37Lineca-Bold.otf") format("otf"),
+        url(".././public/fonts/F37Lineca-Bold.ttf") format("ttf"),
+        url(".././public/fonts/F37Lineca-Bold.woff2") format("woff2");
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Lineca-Medium";
-    src: url("./fonts/F37Lineca-Medium.otf") format("otf"),
-        url("./fonts/F37Lineca-Medium.ttf") format("ttf"),
-        url("./fonts/F37Lineca-Medium.woff2") format("woff2");
+    src: url(".././public/fonts/F37Lineca-Medium.otf") format("otf"),
+        url(".././public/fonts/F37Lineca-Medium.ttf") format("ttf"),
+        url(".././public/fonts/F37Lineca-Medium.woff2") format("woff2");
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NunitoSans-Bold";
+    src: url(".././public/fonts/NunitoSans-Bold.ttf") format("ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NunitoSans-Regular";
+    src: url(".././public/fonts/NunitoSans-Regular.ttf") format("ttf");
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NunitoSans-SemiBold";
+    src: url(".././public/fonts/NunitoSans-SemiBold.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NunitoSans-Light";
+    src: url(".././public/fonts/NunitoSans-Light.ttf") format("ttf");
+    font-weight: lighter;
+    font-style: normal;
 }
 
 body {

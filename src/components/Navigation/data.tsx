@@ -2,13 +2,13 @@ import { Facebook } from "../../assets/svg/facebook";
 import { Instagram } from "../../assets/svg/instagram";
 import { Twitter } from "../../assets/svg/twitter";
 import { Youtube } from "../../assets/svg/youtube";
+import { FooterLinkType } from "./Footer/type";
 
 export const navigationData = [
     { id: 1, text: "O nás", link: "/o-nas" },
     {
         id: 2,
         text: "Co děláme",
-        link: "co-delame",
         subItems: [
             { id: 11, text: "Mentoring", link: "/mentoring" },
             { id: 22, text: "Akademie", link: "/akademie" },
@@ -20,7 +20,15 @@ export const navigationData = [
     { id: 5, text: "Kontakt", link: "/kontakt" },
 ];
 
-export const getSocialIconsData = ({ width, height, color }: any) => [
+export const getSocialIconsData = ({
+    width,
+    height,
+    color,
+}: {
+    width: string;
+    height: string;
+    color: string;
+}) => [
     {
         id: 1,
         icon: <Facebook width={width} height={height} color={color} />,
@@ -43,7 +51,7 @@ export const getSocialIconsData = ({ width, height, color }: any) => [
     },
 ];
 
-export const footerNavigationData = [
+export const footerNavigationData: FooterLinkType[] = [
     { id: 1, text: "O nás", link: "/o-nas", mobile: true, section: "page" },
     { id: 2, text: "Příběhy", link: "/pribehy", mobile: true, section: "page" },
     {

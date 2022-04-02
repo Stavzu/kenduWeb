@@ -21,6 +21,7 @@ const colors = {
             1: "#D5431A",
         },
         text: {
+            1: "#101119",
             2: "#41454E",
             3: "#6E757C",
         },
@@ -31,9 +32,27 @@ const fonts = {
     heading: `Lineca-Bold`,
     body: `Lineca-Medium`,
     fonts: {
-        //heading: `Linecaa, ${base.fonts?.heading}`,
-        // body: `Lineca-Bold,${base.fonts?.body}`,
+        heading: `NunitoSans-Regular, ${base.fonts?.heading}`,
+    },
+    outline: "none",
+};
+
+const styles = {
+    global: {
+        html: { fontSize: "62.5%" },
+        // styles for the `button`
+        button: {
+            _focus: { outline: "none", boxShadow: "none" },
+            _active: { outline: "none", boxShadow: "none" },
+            _hover: { outline: "none", boxShadow: "none" },
+        },
+        // styles for the `a`
+        a: {
+            _hover: {
+                textDecoration: "underline",
+            },
+        },
     },
 };
 
-export const theme = extendTheme({ colors, fonts });
+export const theme = extendTheme({ colors, fonts, styles });

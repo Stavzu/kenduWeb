@@ -1,31 +1,29 @@
 import { Box } from "@chakra-ui/react";
-import React from "react";
+import React, { FC } from "react";
+import { LinkType } from "../../constants";
 import { footerNavigationData } from "../data";
 import LinkListItems from "./LinkListItems";
+import { FooterLinkType } from "./type";
 
-const DesktopLinks = () => {
-    const pagesLinks = footerNavigationData.filter((i) => i.section === "page");
-    const contactLinks = footerNavigationData.filter(
-        (i) => i.section === "contact"
-    );
-    const socialLinks = footerNavigationData.filter(
-        (i) => i.section === "social"
-    );
-    const personalLinks = footerNavigationData.filter(
-        (i) => i.section === "personal"
-    );
+const getPageLinks = (type: LinkType): FooterLinkType[] =>
+    footerNavigationData.filter((footerData) => footerData.section === type);
+
+const DesktopLinks: FC = () => {
     return (
         <Box
             display="grid"
             gridTemplateColumns="repeat(4, 1fr)"
             mr={{
-                xl: "50px",
+                xl: "5rem",
             }}
         >
-            <LinkListItems data={pagesLinks} />
-            <LinkListItems data={contactLinks} />
-            <LinkListItems data={socialLinks} isLinkExternal />
-            <LinkListItems data={personalLinks} />
+            <LinkListItems data={getPageLinks(LinkType.PAGE)} />
+            <LinkListItems data={getPageLinks(LinkType.CONTACT)} />
+            <LinkListItems
+                data={getPageLinks(LinkType.SOCIAL)}
+                isLinkExternal
+            />
+            <LinkListItems data={getPageLinks(LinkType.PERSONAL)} />
         </Box>
     );
 };

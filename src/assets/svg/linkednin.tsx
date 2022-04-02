@@ -3,7 +3,7 @@ import { Icon } from "@chakra-ui/react";
 import { ISvg } from "./types";
 
 export const Linkedin = ({ height, width }: ISvg) => (
-    <Icon viewBox="0 0 24 24" height={height} width={width}>
+    <Icon viewBox="0 0 24 24" height={height} width={width} fill="none">
         <rect
             x="3"
             y="3"
