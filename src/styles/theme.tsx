@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, theme as base } from "@chakra-ui/react";
 
 const colors = {
     brand: {
@@ -27,4 +27,13 @@ const colors = {
     },
 };
 
-export const theme = extendTheme({ colors });
+const fonts = {
+    heading: `Lineca-Bold`,
+    body: `Lineca-Medium`,
+    fonts: {
+        //heading: `Linecaa, ${base.fonts?.heading}`,
+        // body: `Lineca-Bold,${base.fonts?.body}`,
+    },
+};
+
+export const theme = extendTheme({ colors, fonts });

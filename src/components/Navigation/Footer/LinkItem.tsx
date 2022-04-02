@@ -6,7 +6,7 @@ function LinkItem({ children, link, isLinkExternal }: any) {
     const isDesktop = useMediaQuery("(min-width: 48em)");
     return (
         <ListItem
-            fontSize={isDesktop ? "13px" : "16px"}
+            fontSize={isDesktop ? "14px" : "16px"}
             lineHeight={isDesktop ? "21px" : "26px"}
             fontWeight="400"
             maxW={isDesktop ? "90px" : undefined}

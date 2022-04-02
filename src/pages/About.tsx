@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import FollowUs from "../components/About/FollowUsPart";
 import OurPartners from "../components/About/OurPartnersPart";
@@ -9,6 +10,7 @@ export function About() {
             About
             <ProductsList />
             <OurPartners />
+            <Box height="400px">a</Box>
             <FollowUs />
         </div>
     );

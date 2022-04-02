@@ -1,13 +1,23 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: "Lineca-Bold";
+    src: url("fonts/F37Lineca-Bold.otf");
+    src: url("fonts/F37Lineca-Bold.otf") format("otf"),
+        url("fonts/F37Lineca-Bold.ttf") format("ttf"),
+        url("fonts/F37Lineca-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+@font-face {
+    font-family: "Lineca-Medium";
+    src: url("./fonts/F37Lineca-Medium.otf") format("otf"),
+        url("./fonts/F37Lineca-Medium.ttf") format("ttf"),
+        url("./fonts/F37Lineca-Medium.woff2") format("woff2");
+    font-weight: normal;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    font-family: "Lineca-Medium", Calibri, Tahoma, sans-serif;
 }
